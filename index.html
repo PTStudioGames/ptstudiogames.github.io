@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PT Studio Games</title>
+<meta name="description" content="Blender add-ons by PT Studio Games: batch rendering, product lighting, bakeable decals and camera moves.">
+<style>
+:root{--bg:#f6f5f2;--fg:#1c1c1e;--muted:#5d5d63;--card:#fff;--line:#e2e0db;--accent:#e2702a}
+@media (prefers-color-scheme:dark){:root{--bg:#141416;--fg:#ececee;--muted:#a0a0a8;--card:#1e1e22;--line:#2c2c31;--accent:#f08a46}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+header{padding:56px 0 24px}
+header h1{margin:0;font-size:2.2rem;letter-spacing:-.02em}
+header p{margin:8px 0 0;color:var(--muted);max-width:640px}
+nav.sec{display:flex;gap:20px;margin-top:20px;font-size:.95rem}
+nav.sec a{color:var(--fg);text-decoration:none;border-bottom:2px solid var(--accent)}
+nav.sec span{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin:24px 0 48px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none}
+.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.card h3{margin:12px 14px 4px;font-size:1.05rem}
+.card p{margin:0 14px 14px;color:var(--muted);font-size:.9rem}
+.card:hover{border-color:var(--accent)}
+.addon{border-top:1px solid var(--line);padding:40px 0}
+.addon h2{margin:0;font-size:1.6rem}
+.addon .tag{margin:4px 0 16px;color:var(--muted)}
+.addon video{width:100%;border-radius:10px;border:1px solid var(--line);background:#000;display:block;margin-bottom:16px}
+.addon h4{margin:20px 0 6px}
+.addon ul{padding-left:20px;margin:0}
+.addon li{margin:4px 0}
+.meta{margin-top:18px;font-size:.9rem;color:var(--muted)}
+code{font-size:.9em;background:var(--line);padding:1px 4px;border-radius:4px}
+footer{padding:32px 0 48px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>PT Studio Games</h1>
+  <p>Games, Blender add-ons and asset packs. The add-ons are small tools that take the repetitive setup out of rendering, lighting and texturing in Blender.</p>
+  <nav class="sec"><a href="#addons">Blender add-ons</a><span>Games — coming later</span><span>Asset packs — coming later</span></nav>
+</header>
+<h2 id="addons">Blender add-ons</h2>
+<div class="grid">
+<a class="card" href="#shotlist"><img src="img/shotlist-hero.jpg" alt="Blender MultiShot Render" loading="lazy"><h3>Blender MultiShot Render</h3><p>Each shot its own camera, size, frames and collections</p></a>
+<a class="card" href="#stagelight"><img src="img/stagelight-hero.jpg" alt="Stagelight Product Studio" loading="lazy"><h3>Stagelight Product Studio</h3><p>One-click product studio: lights, backdrop, camera, turntable</p></a>
+<a class="card" href="#decals"><img src="img/decals-hero.jpg" alt="Decal Stamp" loading="lazy"><h3>Decal Stamp</h3><p>Stamp image decals that bake: Principled inputs, no Mix Shader</p></a>
+<a class="card" href="#cameramoves"><img src="img/cameramoves-hero.jpg" alt="Camera Moves" loading="lazy"><h3>Camera Moves</h3><p>Stack eased A to B camera moves and build the timeline</p></a>
+</div>
+<section class="addon" id="shotlist">
+  <h2>Blender MultiShot Render</h2>
+  <p class="tag">Each shot its own camera, size, frames and collections</p>
+  <video src="img/shotlist-demo.mp4" poster="img/shotlist-hero.jpg" autoplay muted loop playsinline controls></video>
+  <p>MultiShot Render keeps a list of shots in one Blender file, each with its own camera, resolution, frame range, output folder and collection visibility. Tick the shots you want and click Render Checked: every shot renders into its own folder and your scene comes back exactly as it was.</p>
+  <h4>The problem it solves</h4>
+  <p>Rendering the same scene several ways usually means re-setting it by hand before each render: switch the camera, type a new resolution, change the frame range, hide or show collections, change the output path, render, and then undo it all for the next one. MultiShot Render stores that setup once per shot, so you set it up once and render all of them in one click.</p>
+  <h4>Features</h4>
+  <ul><li>Per-shot camera.</li><li>Per-shot resolution and resolution %.</li><li>Per-shot frame range, or a single still frame.</li><li>Per-shot output subfolder under one base output folder.</li><li>Saved collection visibility per shot: capture which collections are excluded, and that shot renders with them.</li><li>Render Checked: renders every ticked shot in one click, with progress shown in the status bar.</li><li>Esc cancels a running render.</li><li>Your scene&#x27;s camera, resolution, frame range, output path and collection state are restored afterwards.</li><li>No temp files: each shot writes straight into its own folder.</li></ul>
+  <p class="meta">Blender 4.2 and later · Eevee and Cycles · Coming soon to Superhive</p>
+</section>
+<section class="addon" id="stagelight">
+  <h2>Stagelight Product Studio</h2>
+  <p class="tag">One-click product studio: lights, backdrop, camera, turntable</p>
+  <video src="img/stagelight-demo.mp4" poster="img/stagelight-hero.jpg" autoplay muted loop playsinline controls></video>
+  <p>Stagelight Product Studio is a Blender add-on for anyone who needs a clean product shot without placing lights by hand. Select your mesh and click Build Studio: it makes a backdrop, key, fill and rim lights and a camera around the selection and sizes them to it. Pick one of four looks and a backdrop colour, then render a still or a turntable PNG sequence in Eevee or Cycles.</p>
+  <h4>The problem it solves</h4>
+  <p>A product shot needs a backdrop, three lights and a camera that frame the object, and every new object means moving all of it again. Stagelight builds the rig around whatever you select, so a bottle, a shoe or a whole table of props gets the same studio in one click, and Remove Studio takes it away again.</p>
+  <h4>Features</h4>
+  <ul><li>Build Studio: a backdrop sweep, key, fill and rim lights, a camera and a pivot, fitted to the selected meshes.</li><li>Fits the selection: tested from objects 0.01 units across to objects 100 units across.</li><li>Four looks: Soft, Dramatic, High Key and Warm / Cool, plus a backdrop colour. Rebuild to switch look.</li><li>Building again replaces the studio; you never get two.</li><li>Render Still in Eevee or Cycles with the sample count you set. Glass is set up for the render and your own render settings are put back afterwards.</li><li>Render Turntable: a PNG sequence of one full turn, with the number of frames you choose.</li><li>Remove Studio deletes everything the add-on made and restores your scene camera. Your objects are never moved.</li><li>One studio per scene, so several scenes can each have their own.</li><li>A README is inside the zip, and every setting has a tooltip.</li><li>Pure Python on Blender&#x27;s own modules: nothing else to install.</li></ul>
+  <p class="meta">Blender 4.2 and later · Eevee and Cycles · Coming soon to Superhive</p>
+</section>
+<section class="addon" id="decals">
+  <h2>Decal Stamp</h2>
+  <p class="tag">Stamp image decals that bake: Principled inputs, no Mix Shader</p>
+  <video src="img/decals-demo.mp4" poster="img/decals-hero.jpg" autoplay muted loop playsinline controls></video>
+  <p>Decal Stamp puts logos, labels and badges on any mesh in a click. Pick an image and it is projected onto the active object through an Empty: move, rotate or scale the Empty and the decal slides over the surface. Every decal sits in a list with its own opacity and edge fade, and the whole stack feeds the material&#x27;s Principled BSDF inputs directly, so it renders in Eevee and Cycles and bakes into textures like any other colour.</p>
+  <h4>The problem it solves</h4>
+  <p>Putting a logo on a product usually means UV-unwrapping, painting or a Mix Shader per decal. Mix Shader decals look fine in a render but come out wrong or missing when you bake the material to textures for a game engine or a web viewer. Decal Stamp mixes into the Base Color, Roughness and Normal inputs instead, so what you render is what you bake, and no UV work is needed to place a decal.</p>
+  <h4>Features</h4>
+  <ul><li>Stamp Decal: pick an image; it is projected onto the active mesh from the 3D cursor, facing the view, sized to the image&#x27;s aspect.</li><li>One Empty per decal is its projector: move, rotate and scale it to place the decal.</li><li>A decal list in the 3D Viewport sidebar (Decals tab): show or hide each decal, add, remove, duplicate and reorder. The top decal wins where decals overlap.</li><li>Per decal: opacity, edge fade, an optional roughness value and a normal strength that embosses the image.</li><li>Duplicate copies a decal and its settings onto a new Empty beside the original, ready to move.</li><li>Selecting a decal&#x27;s Empty in the viewport selects it in the list.</li><li>Bakes: the decals feed the Principled BSDF&#x27;s Base Color, Roughness and Normal inputs through one &quot;Decal Stack&quot; node group, with no Mix Shader. A Cycles Diffuse colour bake shows them in the texture.</li><li>Non-destructive: removing the last decal reconnects your original inputs and deletes the node group.</li><li>Eevee and Cycles. Blender 4.2 to 5.x.</li></ul>
+  <p class="meta">Blender 4.2 and later · Eevee and Cycles · Coming soon to Superhive</p>
+</section>
+<section class="addon" id="cameramoves">
+  <h2>Camera Moves</h2>
+  <p class="tag">Stack eased A to B camera moves and build the timeline</p>
+  <video src="img/cameramoves-demo.mp4" poster="img/cameramoves-hero.jpg" autoplay muted loop playsinline controls></video>
+  <p>Camera Moves turns camera animation into a list. Pose a camera, click Set A; move it, click Set B; pick a duration and an easing. Stack as many moves as you like, on one camera or several, then click Build Timeline: every move is keyed end to end from the scene start, with a marker that switches to its camera. Change a duration or the order and build again.</p>
+  <h4>The problem it solves</h4>
+  <p>A product turntable, an archviz walkthrough or a showreel usually needs a handful of simple camera moves: a push-in, a slide, a crane up. Keying each one by hand, fixing its curves, then shifting every later key when one changes length takes longer than the shots themselves. Camera Moves stores each move as two poses and lays them out for you.</p>
+  <h4>Features</h4>
+  <ul><li>Works with your own cameras: each move uses any camera in the scene, picked from a camera-only field.</li><li>Set A / Set B store the camera&#x27;s location, rotation and focal length; Go A / Go B put it back there.</li><li>Per-move duration in frames and easing: Linear, Ease In-Out or Smooth.</li><li>A move stack: add, remove, reorder, and tick moves on or off.</li><li>Build Timeline keys the ticked moves end to end from the scene&#x27;s start frame, adds a timeline marker bound to each move&#x27;s camera, and sets the scene&#x27;s end frame to the last move&#x27;s end.</li><li>Rebuilding is exact: it first clears the location, rotation and focal-length keys inside the range it built last time and its own markers (named &quot;CM ...&quot;), so keys outside that range and your other markers stay.</li><li>Per-move handheld shake (0 to 1): a noise on the camera&#x27;s rotation, limited to that move&#x27;s frames and faded in and out.</li><li>Render A/B stills: one click renders each ticked move&#x27;s start and end poses to <code>&lt;output folder&gt;/&lt;move&gt;/&lt;move&gt;_A.png</code> and <code>_B.png</code>, then puts the camera, frame and output path back.</li><li>Blender 4.2 to 5.x.</li></ul>
+  <p class="meta">Blender 4.2 and later · Eevee and Cycles · Coming soon to Superhive</p>
+</section>
+<footer>© 2026 PT Studio Games · <a href="https://github.com/PTStudioGames" style="color:inherit">GitHub</a></footer>
+</div>
+</body>
+</html>
